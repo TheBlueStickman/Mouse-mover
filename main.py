@@ -1,4 +1,4 @@
-import pyautogui, time, keyboard, threading
+mport pyautogui, time, keyboard, threading
 
 time.sleep(1)
 
@@ -21,13 +21,36 @@ if programRun == False:
 
 
 pyautogui.moveTo(730, 350)
-time.sleep(5)
+time.sleep(1)
+
+if keyboard.is_pressed('esc'):
+    print("ESC pressed. Breaking the loop.")
+    programRun = False
+
+if programRun == False:
+    break   
 
 pyautogui.moveTo(960, 350)
-time.sleep(5)
+time.sleep(1)
+if keyboard.is_pressed('esc'):
+    print("ESC pressed. Breaking the loop.")
+    programRun = False
 
+if programRun == False:
+    break
 pyautogui.moveTo(960, 580)
-time.sleep(5)
+time.sleep(1)
+if keyboard.is_pressed('esc'):
+    print("ESC pressed. Breaking the loop.")
+    programRun = False
 
+if programRun == False:
+    break
 pyautogui.moveTo(730, 580)
-time.sleep(5)
+time.sleep(1)
+if keyboard.is_pressed('esc'):
+    print("ESC pressed. Breaking the loop.")
+    programRun = False
+
+if programRun == False:
+    break
