@@ -9,6 +9,8 @@ time.sleep(1)
 
 programRun = True
 
+seconds = 1
+
 def checkEsc():
     exit = False
     if keyboard.is_pressed('esc'):
@@ -16,38 +18,44 @@ def checkEsc():
         exit = True
     return exit
 
-def couunt():
-    while countdown >= seconds:
+def waitAndCheck(exit_condition):
+    exit_condition = False
+    countdown = 0
+    while countdown <= seconds:
         if checkEsc() == True:
+            exit_condition = True
             break
         else:
             time.sleep(0.01)
             countdown += 0.01
-        programRun = False
+    return exit_condition
 
-seconds = 1
 
-countdown = 0
 
 while (programRun):
+    waitAndCheck(programRun)
     if checkEsc() == True:
         programRun = False
 
     pyautogui.moveTo(750, 350)
 
-    while countdown >= seconds:
-        if checkEsc() == True:
-            break
-        else:
-            time.sleep(0.01)
-            countdown += 0.01
-        programRun = False
+#    while countdown >= seconds:
+#        countdown = 0
+ #       if checkEsc() == True:
+ #           break
+ #       else:
+   #         time.sleep(0.01)
+  #          countdown += 0.01
+   #     programRun = False
 
     if checkEsc() == True:
         programRun = False
+    
+    waitAndCheck(programRun)
 
     pyautogui.moveTo(950, 350)
-    time.sleep(seconds)
+    
+    waitAndCheck(programRun)
 
     if checkEsc() == True:
         programRun = False
@@ -64,4 +72,3 @@ while (programRun):
     if checkEsc() == True:
         programRun = False
 
-somethign like this?
