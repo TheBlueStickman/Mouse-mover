@@ -11,32 +11,36 @@ right corner Point(x=959, y=350)
 programRun = True
 
 def checkEsc():
+exit = False
 if keyboard.is_pressed('esc'):
-print("ESC pressed. Breaking the loop.")
+	print("ESC pressed. Breaking the loop.")
+	exit = True
+return exit
 
 while (programRun):
+	if checkEsc() == True:
+		programRun = False
 
-if keyboard.is_pressed('esc'):
-    print("ESC pressed. Breaking the loop.")
-    programRun = False
+	pyautogui.moveTo(730, 350)
+	time.sleep(1)
 
-if checkEsc() == True:
-    programRun == False
+	if checkEsc() == True:
+    		break    
 
+	pyautogui.moveTo(960, 350)
+	time.sleep(1)
 
+	if checkEsc() == True:
+    		programRun = False
 
-pyautogui.moveTo(730, 350)
-time.sleep(1)
+	pyautogui.moveTo(960, 580)
+	time.sleep(1)
 
-if checkEsc() == True:
-    break    
+	if checkEsc() == True:
+    		programRun = False
 
+	pyautogui.moveTo(730, 580)
+	time.sleep(1)
 
-pyautogui.moveTo(960, 350)
-time.sleep(1)
-
-pyautogui.moveTo(960, 580)
-time.sleep(1)
-
-pyautogui.moveTo(730, 580)
-time.sleep(1)
+	if checkEsc() == True:
+    		programRun = False
